@@ -3,7 +3,7 @@
 obj-m += test_driver.o
 
 #KERNELDIR ?= /lib/modules/$(shell uname -r)/build
-KERNELDIR ?= /home/user/bbb/build/tmp/work/beaglebone-poky-linux-gnueabi/linux-stable/4.4-r6/linux-beaglebone-standard-build 
+KERNELDIR ?= /lib/modules/$(shell uname -r)/build 
 PWD       := $(shell pwd)
 
 all:
