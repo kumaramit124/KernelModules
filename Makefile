@@ -3,8 +3,8 @@
 obj-m += test_driver.o
 
 #KERNELDIR ?= /lib/modules/$(shell uname -r)/build
-KERNELDIR ?= /lib/modules/$(shell uname -r)/build 
-PWD       := $(shell pwd)
+KERNELDIR ?= /lib/modules/4.4.0-57-generic/build 
+#PWD       := $(shell pwd)
 
 all:
 	make -C $(KERNELDIR) M=$(PWD) modules
