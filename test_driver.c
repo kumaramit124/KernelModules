@@ -1,10 +1,10 @@
 /*for the module*/
-#define __KERNEL__
-#define MODULE
+//#define __KERNEL__
+//#define MODULE
 /*include the head file involved*/
-#if defined(MODVERSIONS)
-#include <linux/modversions.h>
-#endif
+//#if defined(MODVERSIONS)
+//#include <linux/modversions.h>
+//#endif
 #include <asm/types.h>
 #include <asm/atomic.h>
 #include <asm/uaccess.h>
@@ -68,12 +68,12 @@ static size_t tdd_write(struct file *, const char *, size_t, loff_t * );
 static int tdd_ioctl(struct inode *, struct file *, unsigned int, unsigned long );
 static int tdd_open(struct inode *, struct file * );
 static int tdd_release( struct inode *, struct file * );
-struct file_operations tdd_fops={read: tdd_read,
-	write: tdd_write,
-	unlocked_ioctl: tdd_ioctl,
-	open:
-		tdd_open,
-	release: tdd_release,
+static struct file_operations tdd_fops={
+	.read= tdd_read,
+	.write= tdd_write,
+	.unlocked_ioctl= tdd_ioctl,
+	.open= tdd_open,
+	.release= tdd_release,
 };
 void tdd_init( void )
 {
